@@ -1,0 +1,137 @@
+{
+  "info": {
+    "_postman_id": "ed947169-efe8-4745-870c-d7d7dda33953",
+    "name": "InventoryTracker",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54485974",
+    "_collection_link": "https://go.postman.co/collection/54485974-ed947169-efe8-4745-870c-d7d7dda33953?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "GET - Get Product By ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/products/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "products",
+            "1"
+          ]
+        },
+        "description": "Retrieves a specific inventory product using its unique ID. Returns HTTP 200 with the product information, HTTP 404 if the product does not exist, or HTTP 400 for an invalid ID."
+      },
+      "response": []
+    },
+    {
+      "name": "GET - Get All Products",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/products",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "products"
+          ]
+        },
+        "description": "Retrieves all inventory products from the MySQL database. Returns HTTP 200 with a JSON array containing all products, or an empty array if no products exist."
+      },
+      "response": []
+    },
+    {
+      "name": "POST - Create Product",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n    \"name\": \"Dell Latitude 5540 Laptop\",\r\n    \"description\": \"15.6-inch business laptop with 16GB RAM and 512GB SSD\",\r\n    \"quantity\": 10,\r\n    \"price\": 899.99,\r\n    \"is_active\": true\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/products",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "products"
+          ]
+        },
+        "description": "Creates a new inventory product in the MySQL database. Requires a product name, quantity, and price. Returns HTTP 201 with the newly generated product ID when successful."
+      },
+      "response": []
+    },
+    {
+      "name": "PUT - Update Product",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n{\r\n    \"name\": \"Dell Latitude 5540 Laptop - Updated\",\r\n    \"description\": \"15.6-inch business laptop with 32GB RAM and 1TB SSD\",\r\n    \"quantity\": 15,\r\n    \"price\": 949.99,\r\n    \"is_active\": true\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/products/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "products",
+            "1"
+          ]
+        },
+        "description": "Updates an existing inventory product using its unique ID. Accepts changes to the name, description, quantity, price, or active status. Returns HTTP 200 when successful or HTTP 404 if the product does not exist."
+      },
+      "response": []
+    },
+    {
+      "name": "DELETE - Delete Product",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/products/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "products",
+            "1"
+          ]
+        },
+        "description": "Permanently deletes an inventory product from the MySQL database using its unique ID. Returns HTTP 200 when successful or HTTP 404 if the product does not exist."
+      },
+      "response": []
+    }
+  ]
+}
