@@ -1,0 +1,62 @@
+
+{
+  // TypeScript compiler configuration for the
+  // InventoryTracker REST API backend.
+  "compilerOptions": {
+
+    // Compile TypeScript into JavaScript compatible
+    // with ECMAScript 2022.
+    "target": "ES2022",
+
+    // Use Node.js CommonJS module resolution.
+// Node16 understands modern package exports and
+// requires a matching Node16 module setting.
+"module": "Node16",
+
+// Resolve imported modules according to Node.js 16+
+// rules, including modern package configurations.
+"moduleResolution": "Node16",
+
+    // Specify the directory containing our
+    // application's TypeScript source files.
+    "rootDir": "./src",
+
+    // Store the compiled JavaScript files in the
+    // dist directory, keeping them separate
+    // from the original TypeScript source files.
+    "outDir": "./dist",
+
+    // Enable strict type checking to catch potential
+    // programming errors during development.
+    "strict": true,
+
+    // Allow CommonJS packages, such as Express,
+    // to be imported using standard ES import syntax.
+    "esModuleInterop": true,
+
+    // Allow TypeScript to import JSON files as modules.
+    "resolveJsonModule": true,
+
+    // Skip type checking of third-party declaration
+    // files to improve compilation performance.
+    "skipLibCheck": true,
+
+    // Ensure file imports use consistent capitalization.
+    // This helps prevent issues when deploying to
+    // operating systems with case-sensitive file paths.
+    "forceConsistentCasingInFileNames": true
+  },
+
+  // Compile all TypeScript files located inside
+  // the src directory and its subdirectories.
+  "include": [
+    "src/**/*.ts"
+  ],
+
+  // Exclude installed dependencies and previously
+  // compiled JavaScript files from compilation.
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

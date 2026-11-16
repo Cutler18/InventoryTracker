@@ -1,0 +1,17 @@
+
+# Ignore installed Node.js dependencies.
+node_modules/
+
+# Ignore compiled TypeScript output.
+dist/
+
+# Ignore environment files containing passwords.
+.env
+.env.*
+
+# Ignore log files.
+*.log
+
+# Ignore operating system files.
+.DS_Store
+Thumbs.db
